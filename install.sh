@@ -37,6 +37,8 @@ sudo dnf install macchanger -y
 sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects malcontent yelp -y
 
 # Install hardware device drivers for fingerprint and power management tools
+sudo dnf copr enable principis/howdy
+sudo dnf --refresh install howdy
 sudo dnf install libfprint-2-tod1-goodix tlp tlp-config howdy -y
 
 # Install Howdy for facial recognition
