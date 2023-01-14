@@ -31,3 +31,29 @@ flatpak override --filesystem=xdg-config/gtk-4.0
 
 # Uninstall unnecessary default apps
 sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects malcontent yelp -y
+
+# Install hardware device drivers for fingerprint and power management tools
+sudo dnf install libfprint-2-tod1-goodix tlp tlp-config howdy -y
+
+# Install Howdy for facial recognition
+HOWDY_CONF="/usr/lib/security/howdy/config.ini"
+
+while true; do
+  read -p "Setup face recognition with Howdy (y/n)?" choice
+  case "$choice" in 
+    y|Y ) 
+    echo "Configuring Howdy for '$LOGIN_USER'"
+
+    # Configure video device
+    sed -i "s/^.*\bdevice_path\b.*$/$HOWDY_VIDEO/" $HOWDY_CONF
+
+    # Register your face
+    howdy -U $LOGIN_USER add
+
+    break;;
+
+    n|N )
+    echo "Skipping configuration of Howdy"; break;;
+    * ) echo "invalid";;
+  esac
+done
