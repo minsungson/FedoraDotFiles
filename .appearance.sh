@@ -28,3 +28,6 @@ gsettings set org.gnome.desktop.wm.preferences theme "Orchis"
 
 dnf install ostree libappstream-glib -y
 flatpak override --filesystem=xdg-config/gtk-4.0
+
+# Uninstall unnecessary default apps
+sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects malcontent yelp -y
