@@ -1,5 +1,13 @@
 # !/bin/zsh
 
+### to do
+# change fan curve so fans come on at higher temp.
+# automate editing pam
+# check all file paths - currently based on macos
+# double check if macchanger installs and configures itself as expected
+# double check if dnf-automatic installs and configures itself as expected
+# double check if theme is applied as expected
+
 # Ask for admin password upfront
 echo "Enter Admin Password"
 -v
