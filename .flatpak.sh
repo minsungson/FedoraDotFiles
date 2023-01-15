@@ -7,5 +7,6 @@ flatpak install flathub sh.cider.cider
 flatpak install flathub org.libreoffice.LibreOffice
 flatpak install flathub com.bitwarden.desktop
 flatpak install flathub com.stremio.Stremio
-flatpak install flathub com.skype.Clientflatpak install flathub net.ankiweb.Anki
+flatpak install flathub com.skype.Client
+flatpak install flathub net.ankiweb.Anki
 flatpak install flathub com.calibre_ebook.calibre
