@@ -104,4 +104,7 @@ EOF
 
 checkmodule -M -m -o howdy.mod howdy.te
 semodule_package -o howdy.pp -m howdy.mod
-semodule -i howdy.pp
+semodule -i howdy.
+
+# update packages
+sudo dnf update
