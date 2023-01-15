@@ -114,5 +114,8 @@ semodule -i howdy.
 # Disable shutdown confirmation prompt
 gsettings set org.gnome.SessionManager logout-prompt false
 
+# Paywall firewall
+curl -C - --output bypass-paywalls-chrome-master.zip https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip
+
 # update packages
 sudo dnf update
