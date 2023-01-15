@@ -15,6 +15,10 @@ echo "Enter Admin Password"
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Fractional Scaling
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
+
 # Install Flatpak and Packages
 echo "Install Flatpak and Packages"
 bash "/Users/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
