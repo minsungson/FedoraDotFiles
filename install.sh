@@ -43,6 +43,7 @@ sudo dnf install macchanger -y
 
 # Uninstall unnecessary default apps
 sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects malcontent yelp -y
+sudo dnf remove gnome-shell-extension-applications-menu gnome-shell-extension-window-list gnome-shell-extension-background-logo
 
 # Install hardware device drivers for fingerprint and power management tools
 sudo dnf copr enable principis/howdy
