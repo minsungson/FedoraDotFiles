@@ -111,5 +111,8 @@ checkmodule -M -m -o howdy.mod howdy.te
 semodule_package -o howdy.pp -m howdy.mod
 semodule -i howdy.
 
+# Disable shutdown confirmation prompt
+gsettings set org.gnome.SessionManager logout-prompt false
+
 # update packages
 sudo dnf update
