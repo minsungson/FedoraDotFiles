@@ -12,6 +12,7 @@ https://extensions.gnome.org/extension-data/weatheroclockCleoMenezesJr.github.io
 https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v50.shell-extension.zip #User Themes
 https://extensions.gnome.org/extension-data/date-menu-formattermarcinjakubowski.github.com.v8.shell-extension.zip #Date Menu Formatter
 https://extensions.gnome.org/extension-data/bluetooth-quick-connectbjarosze.gmail.com.v30.shell-extension.zip #Bluetooth Quick Connect
+https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v39.shell-extension.zip #Tiling Assistant
 
 # Install and Apply Theme
 curl -C - --output Orchis-theme-2022-10-19.zip https://codeload.github.com/vinceliuice/Orchis-theme/zip/refs/tags/2022-10-19

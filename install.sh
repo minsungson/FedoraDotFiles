@@ -118,4 +118,4 @@ gsettings set org.gnome.SessionManager logout-prompt false
 curl -C - --output bypass-paywalls-chrome-master.zip https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip
 
 # update packages
-sudo dnf update
+sudo dnf update -y
