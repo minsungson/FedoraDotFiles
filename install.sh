@@ -25,11 +25,8 @@ bash "/Users/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
 
 # Improve speed of DNF
 echo "Improve speed of DNF"
-file = "/etc/dnf/dnf.conf"
-cat << EOT >> $file
-add max_parallel_downloads=10
-add fastestmirror=true
-EOT
+sed -i -e '4a\max_parallel_downloads=10' /etc/dnf/dnf.conf
+sed -i -e '5a\fastestmirror=true' /etc/dnf/dnf.conf
 
 # Change Gnome Appearance
 echo "Changing Gnome Appearance"
