@@ -77,12 +77,10 @@ while true; do
   esac
 done
 
-# add to /etc/pam.d/sudo
-# auth       sufficient   pam_python.so /lib64/security/howdy/pam.py
+sed -i -e '2a\auth       sufficient   pam_python.so /lib64/security/howdy/pam.py' /etc/pam.d/sudo
 
-# add to /etc/pam.d/gdm-password
-# auth     [success=done ignore=ignore default=bad] pam_selinux_permit.so
-# auth        sufficient    pam_python.so /lib64/security/howdy/pam.py
+sed -i -e '2a\auauth     [success=done ignore=ignore default=bad] pam_selinux_permit.so' /etc/pam.d/gdm-password
+sed -i -e '2a\auth        sufficient    pam_python.so /lib64/security/howdy/pam.py' /etc/pam.d/gdm-password
 
 chmod o+x /lib64/security/howdy/dlib-data
 
