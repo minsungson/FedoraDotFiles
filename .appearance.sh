@@ -4,9 +4,6 @@
 echo "Changing Gnome Appearance"
 org.gnome.desktop.background show-desktop-icons false
 
-# find more settings to change
-# gsettings list-recursively
-
 # Install Gnome Extensions
 https://extensions.gnome.org/extension-data/weatheroclockCleoMenezesJr.github.io.v2.shell-extension.zip #Weather in the Clock
 https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v50.shell-extension.zip #User Themes

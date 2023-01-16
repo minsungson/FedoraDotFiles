@@ -2,7 +2,7 @@
 
 ### to do
 # change fan curve so fans come on at higher temp.
-# automate editing pam
+# find more settings to change by using command "gsettings list-recursively"
 # check all file paths - currently based on macos
 # double check if macchanger installs and configures itself as expected
 # double check if dnf-automatic installs and configures itself as expected
