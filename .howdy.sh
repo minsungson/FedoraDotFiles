@@ -31,7 +31,7 @@ done
 sed -i -e '2a\auth       sufficient   pam_python.so /lib64/security/howdy/pam.py' /etc/pam.d/sudo
 
 sed -i -e '2a\auauth     [success=done ignore=ignore default=bad] pam_selinux_permit.so' /etc/pam.d/gdm-password
-sed -i -e '2a\auth        sufficient    pam_python.so /lib64/security/howdy/pam.py' /etc/pam.d/gdm-password
+sed -i -e '3a\auth        sufficient    pam_python.so /lib64/security/howdy/pam.py' /etc/pam.d/gdm-password
 
 chmod o+x /lib64/security/howdy/dlib-data
 
