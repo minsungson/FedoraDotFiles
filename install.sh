@@ -44,7 +44,7 @@ sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-musi
 sudo dnf remove gnome-shell-extension-applications-menu gnome-shell-extension-window-list gnome-shell-extension-background-logo
 
 # Install Howdy and drivers for fingerprint
-bash "/home/"$(whoami)"/FedoraDotFiles/.hardwareAndHowdy.sh"
+bash "/home/"$(whoami)"/FedoraDotFiles/.howdy.sh"
 
 # Disable shutdown confirmation prompt
 gsettings set org.gnome.SessionManager logout-prompt false
