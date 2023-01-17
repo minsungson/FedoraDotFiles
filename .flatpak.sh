@@ -1,12 +1,14 @@
 # !/bin/zsh
 
-flatpak install flathub com.vscodium.codium
-flatpak install flathub org.mozilla.firefox
-flatpak install flathub com.discordapp.Discord
-flatpak install flathub sh.cider.cider
-flatpak install flathub org.libreoffice.LibreOffice
-flatpak install flathub com.bitwarden.desktop
-flatpak install flathub com.stremio.Stremio
-flatpak install flathub com.skype.Client
-flatpak install flathub net.ankiweb.Anki
-flatpak install flathub com.calibre_ebook.calibre
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.mozilla.firefox -y
+flatpak install flathub com.vscodium.codium- y
+flatpak install flathub org.mozilla.firefox -y
+flatpak install flathub com.discordapp.Discord -y
+flatpak install flathub sh.cider.cider -y
+flatpak install flathub org.libreoffice.LibreOffice -y
+flatpak install flathub com.bitwarden.desktop -y
+flatpak install flathub com.stremio.Stremio -y
+flatpak install flathub com.skype.Client -y
+flatpak install flathub net.ankiweb.Anki -y
+flatpak install flathub com.calibre_ebook.calibre -y
