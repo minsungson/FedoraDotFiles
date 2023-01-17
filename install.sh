@@ -21,7 +21,7 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 
 # Install Flatpak and Packages
 echo "Install Flatpak and Packages"
-bash "/Users/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
+bash "/home/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
 
 # Improve speed of DNF
 echo "Improve speed of DNF"
@@ -30,7 +30,7 @@ sed -i -e '5a\fastestmirror=true' /etc/dnf/dnf.conf
 
 # Change Gnome Appearance
 echo "Changing Gnome Appearance"
-bash "/Users/"$(whoami)"/FedoraDotFiles/.appearance.sh"
+bash "/home/"$(whoami)"/FedoraDotFiles/.appearance.sh"
 
 # Configure automatic updates
 echo "Configure automatic updates"
@@ -47,7 +47,7 @@ sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-musi
 sudo dnf remove gnome-shell-extension-applications-menu gnome-shell-extension-window-list gnome-shell-extension-background-logo
 
 # Install Howdy and drivers for fingerprint
-bash "/Users/"$(whoami)"/FedoraDotFiles/.hardwareAndHowdy.sh"
+bash "/home/"$(whoami)"/FedoraDotFiles/.hardwareAndHowdy.sh"
 
 # Disable shutdown confirmation prompt
 gsettings set org.gnome.SessionManager logout-prompt false

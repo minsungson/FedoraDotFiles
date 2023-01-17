@@ -14,11 +14,11 @@ https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v39
 # Install and Apply Theme
 curl -C - --output Orchis-theme-2022-10-19.zip https://codeload.github.com/vinceliuice/Orchis-theme/zip/refs/tags/2022-10-19
 unzip -q Orchis-theme-2022-10-19
-cp /Users/"$(whoami)"/Orchis-theme-2022-10-19.zip /Users/"$(whoami)"/FedoraDotFiles
-rm /Users/"$(whoami)"/Orchis-theme-2022-10-19.zip
-cd /Users/"$(whoami)"/FedoraDotFiles
+cp /home/"$(whoami)"/Orchis-theme-2022-10-19.zip /home/"$(whoami)"/FedoraDotFiles
+rm /home/"$(whoami)"/Orchis-theme-2022-10-19.zip
+cd /home/"$(whoami)"/FedoraDotFiles
 unzip -q Orchis-theme-2022-10-19.zip
-cd /Users/"$(whoami)"/FedoraDotFiles/Orchis-theme-2022-10-19
+cd /home/"$(whoami)"/FedoraDotFiles/Orchis-theme-2022-10-19
 ./install.sh -l --tweaks macos --tweaks compact --theme teal --color dark
 
 gsettings set org.gnome.desktop.interface gtk-theme "Orchis"
