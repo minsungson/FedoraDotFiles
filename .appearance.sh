@@ -11,18 +11,18 @@ https://extensions.gnome.org/extension-data/date-menu-formattermarcinjakubowski.
 https://extensions.gnome.org/extension-data/bluetooth-quick-connectbjarosze.gmail.com.v30.shell-extension.zip #Bluetooth Quick Connect
 https://extensions.gnome.org/extension-data/tiling-assistantleleat-on-github.v39.shell-extension.zip #Tiling Assistant
 
-# Install and Apply Theme
-curl -C - --output Orchis-theme-2022-10-19.zip https://codeload.github.com/vinceliuice/Orchis-theme/zip/refs/tags/2022-10-19
-unzip -q Orchis-theme-2022-10-19
-cp /home/"$(whoami)"/Orchis-theme-2022-10-19.zip /home/"$(whoami)"/FedoraDotFiles
-rm /home/"$(whoami)"/Orchis-theme-2022-10-19.zip
-cd /home/"$(whoami)"/FedoraDotFiles
-unzip -q Orchis-theme-2022-10-19.zip
-cd /home/"$(whoami)"/FedoraDotFiles/Orchis-theme-2022-10-19
-./install.sh -l --tweaks macos --tweaks compact --theme teal --color dark
 
-gsettings set org.gnome.desktop.interface gtk-theme "Orchis"
-gsettings set org.gnome.desktop.wm.preferences theme "Orchis"
+# Change Gnome settings
+gsettings set org.gnome.desktop.privacy report-technical-problems false
+gsettings set org.gnome.desktop.privacy remove-old-temp-files true
+gsettings set org.gnome.desktop.peripherals.touchpad speed 0.19852941176470584
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+gsettings set org.gnome.desktop.interface clock-show-seconds true
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.datetime automatic-timezone true
+gsettings set org.gnome.software show-ratings true
+gsettings set org.gnome.shell.extensions.ding show-home false
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 
 dnf install ostree libappstream-glib -y
 flatpak override --filesystem=xdg-config/gtk-4.0
