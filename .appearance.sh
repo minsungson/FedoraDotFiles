@@ -23,6 +23,3 @@ gsettings set org.gnome.desktop.datetime automatic-timezone true
 gsettings set org.gnome.software show-ratings true
 gsettings set org.gnome.shell.extensions.ding show-home false
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
-
-dnf install ostree libappstream-glib -y
-flatpak override --filesystem=xdg-config/gtk-4.0
