@@ -1,11 +1,7 @@
 # !/bin/zsh
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.mozilla.firefox -y
-flatpak install flathub com.vscodium.codium- y
-flatpak install flathub org.mozilla.firefox -y
 flatpak install flathub com.discordapp.Discord -y
-flatpak install flathub sh.cider.cider -y
 flatpak install flathub org.libreoffice.LibreOffice -y
 flatpak install flathub com.bitwarden.desktop -y
 flatpak install flathub com.stremio.Stremio -y
