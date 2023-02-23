@@ -8,3 +8,4 @@ flatpak install flathub com.stremio.Stremio -y
 flatpak install flathub com.skype.Client -y
 flatpak install flathub net.ankiweb.Anki -y
 flatpak install flathub com.calibre_ebook.calibre -y
+flatpak install flathub org.gnome.Solanum
