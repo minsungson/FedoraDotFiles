@@ -15,15 +15,20 @@ echo "Enter Admin Password"
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Install Flatpak and Packages
-echo "Install Flatpak and Packages"
-bash "/home/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
+# Configure automatic updates
+echo "Configure automatic updates"
+sudo dnf install dnf-automatic -y
+sed -c -i "s/\($"apply_updates = no"*= *\).*/\1$"apply_updates = yes"/" $/etc/dnf/automatic.conf
+sudo systemctl enable --now dnf-automatic.timer
 
 # Improve speed of DNF
 echo "Improve speed of DNF"
 sudo sed -i -e '4a\max_parallel_downloads=10' /etc/dnf/dnf.conf
 sudo sed -i -e '5a\fastestmirror=true' /etc/dnf/dnf.conf
-# best=false
+
+# Install Flatpak and Packages
+echo "Install Flatpak and Packages"
+bash "/home/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
 
 # Install DNF Packages
 sudo dnf install firefox -y
@@ -37,12 +42,6 @@ sudo dnf install code
 # Change Gnome Appearance
 echo "Changing Gnome Appearance"
 bash "/home/"$(whoami)"/FedoraDotFiles/.appearance.sh"
-
-# Configure automatic updates
-echo "Configure automatic updates"
-sudo dnf install dnf-automatic -y
-sed -c -i "s/\($"apply_updates = no"*= *\).*/\1$"apply_updates = yes"/" $/etc/dnf/automatic.conf
-sudo systemctl enable --now dnf-automatic.timer
 
 # Install MACchanger
 echo "Randomise MAC Address on Boot"
