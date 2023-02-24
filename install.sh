@@ -55,9 +55,6 @@ sudo dnf remove gnome-shell-extension-applications-menu gnome-shell-extension-wi
 # Install Howdy and drivers for fingerprint
 bash "/home/"$(whoami)"/FedoraDotFiles/.howdy.sh"
 
-# Disable shutdown confirmation prompt
-gsettings set org.gnome.SessionManager logout-prompt false
-
 # Paywall firewall
 curl -C - --output bypass-paywalls-chrome-master.zip https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip
 
