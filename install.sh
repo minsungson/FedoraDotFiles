@@ -7,6 +7,7 @@
 # double check if macchanger installs and configures itself as expected
 # double check if dnf-automatic installs and configures itself as expected
 # double check if theme is applied as expected
+# https://gitlab.com/-/snippets/2500389
 
 # Ask for admin password upfront
 echo "Enter Admin Password"
@@ -37,6 +38,10 @@ sudo dnf remove gnome-shell-extension-applications-menu gnome-shell-extension-wi
 # Install MACchanger
 echo "Randomise MAC Address on Boot"
 sudo dnf install macchanger -y
+
+# Power management
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq && sudo ./auto-cpufreq-installer
 
 # Change Gnome Appearance
 echo "Changing Gnome Appearance"

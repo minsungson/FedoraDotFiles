@@ -3,9 +3,8 @@
 # Install hardware device drivers for fingerprint and power management tools
 sudo dnf copr enable principis/howdy
 sudo dnf --refresh install howdy
-sudo dnf install libfprint-2-tod1-goodix tlp tlp-config howdy -y
 
-# Install Howdy for facial recognition
+# # Install Howdy for facial recognition
 HOWDY_CONF="/usr/lib64/security/howdy/config.ini"
 
 while true; do
@@ -28,10 +27,14 @@ while true; do
   esac
 done
 
+sed -i "s/device_path/$HOWDY_VIDEO/" /usr/lib64/security/howdy/config.ini
 
-# We need version 1.0.26 from libusb, because 1.0.25 has a regression which breaks the fingerprint scanner.
-# We also need version 1.90.9 from fprintd because higher versions do not work as expected.
-# Get the rpms and install them
+sed 's/ReplaceThisText/ByThis/g'
+HOWDY_VIDEO = "/dev/video2"
+sed -i "s/^.*\bdevice_path\b.*$/$HOWDY_VIDEO/" $/usr/lib64/security/howdy/config.ini
+sed -i "s/device_ewfefpath = bufbewofbcwo ghi.*$/device_path = /dev/video2\ ghi/g" /usr/lib64/security/howdy/config.ini
+
+# Install fingerprint driver
 wget https://kojipkgs.fedoraproject.org//packages/libusb1/1.0.26/2.fc38/x86_64/libusb1-1.0.26-2.fc38.x86_64.rpm
 wget https://kojipkgs.fedoraproject.org//packages/libusb1/1.0.26/2.fc38/x86_64/libusb1-devel-1.0.26-2.fc38.x86_64.rpm
 wget https://kojipkgs.fedoraproject.org//packages/fprintd/1.90.9/2.fc34/x86_64/fprintd-1.90.9-2.fc34.x86_64.rpm
