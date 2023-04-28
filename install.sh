@@ -9,12 +9,8 @@
 # double check if theme is applied as expected
 # https://gitlab.com/-/snippets/2500389
 
-# Ask for admin password upfront
-echo "Enter Admin Password"
--v
-
-# Keep-alive: update existing `sudo` time stamp until script has finished
-while true; do -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# Complete script as root
+sudo su
 
 # Configure automatic updates
 echo "Configure automatic updates"
@@ -26,14 +22,8 @@ sudo systemctl enable --now dnf-automatic.timer
 echo "Install Flatpak and Packages"
 bash "/home/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
 
-# Install DNF Packages
-sudo dnf install firefox -y
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-sudo dnf check-update
-sudo dnf install code
-sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects -y --skip-broken
-sudo dnf remove gnome-shell-extension-applications-menu gnome-shell-extension-window-list gnome-shell-extension-background-logo -y --skip-broken
+# Remove DNF Packages
+sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects gnome-shell-extension-applications-menu gnome-shell-extension-window-list gnome-shell-extension-background-logo -y --skip-broken
 
 # Install MACchanger
 echo "Randomise MAC Address on Boot"
@@ -47,8 +37,8 @@ cd auto-cpufreq && sudo ./auto-cpufreq-installer
 echo "Changing Gnome Appearance"
 bash "/home/"$(whoami)"/FedoraDotFiles/.appearance.sh"
 
-# Install Howdy and drivers for fingerprint
-bash "/home/"$(whoami)"/FedoraDotFiles/.howdy.sh"
+# Install drivers for fingerprint
+bash "/home/"$(whoami)"/FedoraDotFiles/.fingerprint.sh"
 
 # Improve speed of DNF
 echo "Improve speed of DNF"
