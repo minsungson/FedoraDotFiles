@@ -12,18 +12,26 @@
 # Complete script as root
 sudo su
 
+# Improve speed of DNF
+echo "Improve speed of DNF"
+sudo sed -i -e '4a\max_parallel_downloads=10' /etc/dnf/dnf.conf
+sudo sed -i -e '5a\fastestmirror=true' /etc/dnf/dnf.conf
+
+# update packages
+sudo dnf update -y
+
 # Configure automatic updates
 echo "Configure automatic updates"
 sudo dnf install dnf-automatic -y
 sed -c -i "s/\($"apply_updates = no"*= *\).*/\1$"apply_updates = yes"/" $/etc/dnf/automatic.conf
 sudo systemctl enable --now dnf-automatic.timer
 
+# Remove DNF Packages
+sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects gnome-shell-extension-applications-menu gnome-shell-extension-window-list gnome-shell-extension-background-logo -y --skip-broken
+
 # Install Flatpak and Packages
 echo "Install Flatpak and Packages"
 bash "/home/"$(whoami)"/FedoraDotFiles/.flatpak.sh"
-
-# Remove DNF Packages
-sudo dnf remove epiphany gnome-calculator gnome-characters gnome-maps gnome-music gnome-photos gnome-remote-desktop gnome-user-docs gnome-user-share gnome-video-effects gnome-shell-extension-applications-menu gnome-shell-extension-window-list gnome-shell-extension-background-logo -y --skip-broken
 
 # Install MACchanger
 echo "Randomise MAC Address on Boot"
@@ -40,13 +48,5 @@ bash "/home/"$(whoami)"/FedoraDotFiles/.appearance.sh"
 # Install drivers for fingerprint
 bash "/home/"$(whoami)"/FedoraDotFiles/.fingerprint.sh"
 
-# Improve speed of DNF
-echo "Improve speed of DNF"
-sudo sed -i -e '4a\max_parallel_downloads=10' /etc/dnf/dnf.conf
-sudo sed -i -e '5a\fastestmirror=true' /etc/dnf/dnf.conf
-
 # Paywall firewall
 curl -C - --output bypass-paywalls-chrome-master.zip https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip
-
-# update packages
-sudo dnf update -y
