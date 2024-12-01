@@ -46,7 +46,7 @@ echo "Changing Gnome Appearance"
 bash "/home/"$(whoami)"/FedoraDotFiles/.appearance.sh"
 
 # Install drivers for fingerprint
-bash "/home/"$(whoami)"/FedoraDotFiles/.fingerprint.sh"
+# bash "/home/"$(whoami)"/FedoraDotFiles/.fingerprint.sh"
 
 # Paywall firewall
 curl -C - --output bypass-paywalls-chrome-master.zip https://github.com/iamadamdev/bypass-paywalls-chrome/archive/master.zip
